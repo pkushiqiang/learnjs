@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+"use strict";
+var makeSuspend = function(fun, gap ) {	
+    var lastTime ;	   
+	var resFun = function(msg) {	        	
+		var ct = new Date().getTime();
+     //   console.log("ct=" + ct + "   lastTime="+lastTime);
+		if (lastTime === undefined  || ct-lastTime> gap) {
+			fun(msg);
+			lastTime = new Date().getTime();
+		}		
+	};
+	return resFun ;
+} 
+var d = new Date();
+var count;
+var print = function(msg) {
+		console.log("run...."+ count + "  " + msg +" ..." + d.getTime());           
+    }
+    
+var f = makeSuspend(print, 10);
+console.log("Hello world");
+for ( count=5; count<16; count++) {
+  //  console.log("count="+count);
+    f(count*10);
+    var i=0;        
+    while (i<99900) {
+      i++;            
+    }   
+}
+</script>
+
+</body>
+</html>
