@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+"use strict";
+ 
+function A() {
+    console.log("run A() this = ",this);
+    this.attr1  = "attr1";
+    this.method1 = function () {
+        console.log("method1 this = ",this);
+    }
+    
+}
+
+
+A.method2 = function () {
+        console.log("method2 this = ",this);
+    }
+    
+A.prototype.attr2 = "attr2";
+A.prototype.attr3 = "attr3";
+
+A.prototype.method3 = function () {
+        console.log("method3 this = ",this);
+    }
+    
+function plain(){
+    console.log("plain this = ",this);
+}
+
+function testAttr() {
+    var a = new A();
+    console.log("a.attr1=",  a.attr1 );
+    console.log("a.attr2=",  a.attr2 );
+
+    var b = new A();
+    console.log("b.attr2=",  b.attr2 );
+    a.attr2 = "new value";
+    console.log("a.attr2=",  a.attr2 );
+    console.log("b.attr2=",  b.attr2 );
+
+    delete a.attr3;
+    console.log("a.attr3=",  a.attr3 );
+    console.log("b.attr3=",  b.attr3 );
+
+    delete A.prototype.attr3;
+    console.log("a.attr3=",  a.attr3 );
+    console.log("b.attr3=",  b.attr3 );
+
+    a.attr4="attr4"
+    console.log("a.attr4=",  a.attr4 );
+    console.log("a.constructor=",  a.constructor );
+}
+// testAttr();
+
+
+function testMethod() {
+    // A.method1(); ! error line
+    
+  //  console.log(" A.method1=",   A.method1);
+  //  A.method2();
+   
+    var a = new A();
+    a.method1();    
+   // a.method2(); ! error line
+    console.log(" a.method2=",   a.method2);
+    a.method3();
+    A();
+    return;
+    
+}
+// testMethod();    
+
+function testNew(){
+    plain();
+    var b = new plain();
+    console.log("b=",   b);
+    for (var v in b) {
+         console.log("v=",   v);
+    }
+}
+testNew();
+</script>
+
+</body>
+</html>
