@@ -34,6 +34,19 @@ function plain(){
     console.log("plain this = ",this);
 }
 
+function testAttr2() {
+    var a = new A();
+    var b = new A();
+    a.attr2 = "newvalue";
+    console.log("a.attr2=",  a.attr2 );
+    delete a.attr2;
+    console.log("a.attr2=",  a.attr2 );
+    console.log("b.attr2=",  b.attr2 );
+}
+
+testAttr2();
+    
+
 function testAttr() {
     var a = new A();
     console.log("a.attr1=",  a.attr1 );
@@ -85,7 +98,7 @@ function testNew(){
          console.log("v=",   v);
     }
 }
-testNew();
+// testNew();
 </script>
 
 </body>

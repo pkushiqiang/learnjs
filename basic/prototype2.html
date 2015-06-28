@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+"use strict";
+ 
+function Dog() {
+  //  console.log("run Dog() this = ",this);
+    this.tail  = true;     
+}
+
+Dog.prototype.say = function() {console.log( 'Woof!');};
+ 
+function Cat() {
+  //  console.log("run Dog() this = ",this);
+    this.tail  = true;     
+}
+console.log(Cat.prototype);
+var benji = new Dog();
+var rusty = new Dog();
+benji.say();
+     
+
+</script>
+
+</body>
+</html>
