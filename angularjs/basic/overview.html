@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body  ng-app="myApp" ng-controller="MainCtrl">
+
+
+	<span>Insert your name:</span>
+	<input type="text" ng-model="user.name" />
+	<h3>Echo: {{user.name}}</h3>
+	<h3>Hello, {{ message }}</h3>
+
+	What's your name?:
+	<input type="text" focus ng-model="user.name" />
+	<button ng-click="greet()">Click here!</button>
+	<h3>{{ message }}</h3>
+
+	<button ng-click="show = !show">Show</button>
+
+	<div ng-show="show">
+		I am only visible when show is true.
+	</div>
+
+	<ul>
+		<li ng-repeat="person in developers">
+			{{person.name}} from {{person.country}}
+		</li>
+	</ul>
+
+	<ul>
+		<li ng-repeat="person in developers | orderBy:'name'">
+			{{ person.name }} from {{ person.country }}
+		</li>
+	</ul>
+
+	Search: <input ng-model="search" type="text" />
+	<ul>
+		<li ng-repeat="person in developers | filter:search">
+			{{ person.name }} from {{ person.country }}
+		</li>
+	</ul>
+
+	<hello></hello>
+
+	<span>{{ "this is some text" | capitalize }}</span>
+
+	<div ng-controller="SecondCtrl">
+		SecondCtrl:
+		<input type="text" ng-model="user.name">
+	</div>
+
+	<input type="text" ng-model="color" placeholder="Enter a color" />
+	<hello-world color-attr="{{color}}" />
+	<say-hello sayHelloIsolated="sayHello()" />
+
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+		$scope.firstName = "John";
+		$scope.lastName = "Doe";
+	});
+
+	app.controller('MainCtrl', function($scope, UserInformation) {
+		$scope.user = UserInformation;
+		$scope.message = 'World';
+		$scope.greet = function() {
+			$scope.message = "Hello, " + $scope.user.name;
+		}
+		$scope.developers = [
+		{
+			name: "Jesus", country: "Spain"
+		},
+		{
+			name: "Dave", country: "Canada"
+		},
+		{
+			name: "Wesley", country: "USA"
+		},
+		{
+			name: "Krzysztof", country: "Poland"
+		}
+		];
+	});
+
+	app.directive('focus', function() {
+		return {
+			link: function(scope, element, attrs) {
+				element[0].focus();
+			}
+		};
+	});
+
+
+	app.directive('hello', function() {
+		return {
+			restrict: "E",
+			replace: true,
+			template: "<div>Hello readers, thank you for coming</div>"
+		}
+	});
+
+	app.filter('capitalize', function() {
+		return function(input, param) {
+			return input.substring(0,1).toUpperCase()+input.substring(1);
+		}
+	});
+
+	app.factory('UserInformation', function() {
+		var user = {
+			name: "Angular.js"
+		};
+		return user;
+	});
+
+	app.controller('SecondCtrl', function($scope, UserInformation) {
+		$scope.user = UserInformation;
+	});
+
+
+	app.directive('helloWorld', function() {
+		return {
+			scope: {
+				color: '@colorAttr'
+			},
+			restrict: 'AE',
+			replace: true,
+			template: '<p style="background-color:{{color}}">Hello World',
+			link: function(scope, elem, attrs) {
+				elem.bind('click', function() {
+					elem.css('background-color', 'white');
+					scope.$apply(function() {
+						scope.color = "white";
+					});
+				});
+				elem.bind('mouseover', function() {
+					elem.css('cursor', 'pointer');
+				});
+			}
+		};
+	});
+
+	app.directive('sayHello', function() {
+		return {
+			scope: {
+				sayHelloIsolated: '&amp;'
+			},
+			restrict: 'AE',
+			replace: true,
+			template: '<p style="background-color:{{color}}">Hello World',
+			link: function(scope, elem, attrs) {
+				elem.bind('click', function() {
+					elem.css('background-color', 'white');
+					scope.$apply(function() {
+						scope.color = "white";
+					});
+				});
+				elem.bind('mouseover', function() {
+					elem.css('cursor', 'pointer');
+				});
+			}
+		};
+	});
+	
+
+	</script>
+
+</body>
+</html>
