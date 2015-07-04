@@ -4,16 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-    <title>Shiqiang Guo's Resume</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <style type="text/css">
     dt {
         margin-top: 10px;
@@ -24,7 +19,7 @@
     }
     
     body {
-        padding-top: 65px;
+        padding-top: 0px;
     }
     
     .row {
@@ -47,11 +42,11 @@
         position: absolute;
         width: 100%;
         padding-left: 20px;
-        padding-right: 100px;
+        padding-right: 20px;
     }
     
     #title {
-        height: 330px;
+        height: 200px;
     }
     
     #brief {
@@ -79,11 +74,139 @@
         }
     }
     </style>
+    <style type='text/css'>
+    .group {
+        <!-- w w w . j a va 2s . c om--> background: yellow;
+        width: 200px;
+        height: 500px;
+    }
+    
+    .group .subgroup {
+        background: orange;
+        width: 150px;
+        height: 200px;
+    }
+    
+    .fixed {
+        position: fixed;
+    }
+    
+    .bs-docs-sidebar.affix {
+        position: static;
+    }
+    
+    @media ( min-width: 768px) {
+        .bs-docs-sidebar {
+            padding-left: 20px;
+        }
+    }
+    
+    .bs-docs-sidenav {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .bs-docs-sidebar .nav>li>a {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #999;
+        padding: 4px 20px;
+    }
+    
+    .bs-docs-sidebar .nav>li>a:hover,
+    .bs-docs-sidebar .nav>li>a:focus {
+        padding-left: 19px;
+        color: #563d7c;
+        text-decoration: none;
+        background-color: transparent;
+        border-left: 1px solid #563d7c;
+    }
+    
+    .bs-docs-sidebar .nav>.active>a,
+    .bs-docs-sidebar .nav>.active:hover>a,
+    .bs-docs-sidebar .nav>.active:focus>a {
+        padding-left: 18px;
+        font-weight: 700;
+        color: #563d7c;
+        background-color: transparent;
+        border-left: 2px solid #563d7c;
+    }
+    
+    .bs-docs-sidebar .nav .nav {
+        display: none;
+        padding-bottom: 10px;
+    }
+    
+    .bs-docs-sidebar .nav .nav>li>a {
+        padding-top: 1px;
+        padding-bottom: 1px;
+        padding-left: 30px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    
+    .bs-docs-sidebar .nav .nav>li>a:hover,
+    .bs-docs-sidebar .nav .nav>li>a:focus {
+        padding-left: 29px;
+    }
+    
+    .bs-docs-sidebar .nav .nav>.active>a,
+    .bs-docs-sidebar .nav .nav>.active:hover>a,
+    .bs-docs-sidebar .nav .nav>.active:focus>a {
+        font-weight: 500;
+        padding-left: 28px;
+    }
+    
+    .bs-docs-sidebar .nav>.active>ul {
+        display: block;
+    }
+    
+    .bs-docs-sidebar.affix,
+    .bs-docs-sidebar.affix-bottom {
+        width: 213px;
+    }
+    
+    .bs-docs-sidebar.affix {
+        position: fixed;
+        top: 20px;
+    }
+    
+    .bs-docs-sidebar.affix-bottom {
+        position: absolute;
+    }
+    
+    .bs-docs-sidebar.affix-bottom .bs-docs-sidenav,
+    .bs-docs-sidebar.affix .bs-docs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    @media ( min-width: 1200px) {
+        .bs-docs-sidebar.affix-bottom,
+        .bs-docs-sidebar.affix {
+            width: 263px;
+        }
+    }
+    
+    .nav li.active>a {
+        color: #563d7c;
+    }
+    </style>
+
+    <script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$('body').scrollspy({
+    target: '#sidebar'
+});
+});//]]>  
+</script>
+
 </head>
 
-<body role="document">
+<body role="document"  >
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -112,111 +235,120 @@
     </nav>
     <div class="container theme-showcase" role="main">
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="row">
-            <div class="col-md-3" id="imgdiv">
-                <img src="profile.jpg" class="img-thumbnail" alt="" width="280" height="180">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-3" id="imgdiv">
+                    <img src="profile.jpg" class="img-thumbnail" alt="" width="180" height="180">
+                </div>
+                <div id="title" class="col-md-9">
+                    <div>
+                        <h1 class="text-left">&nbsp;&nbsp;&nbsp;Shiqiang Guo</h1>
+                    </div>
+                    <div id="contact" class="text-right">
+                        <address>
+                            1301 Barthelow Dr. Apt. 13B
+                            <br> College Station, TX 77840
+                            <br>
+                            <abbr title="Phone">P:</abbr> (979)739-5731
+                            <br>
+                            <a href="mailto:pkushiqiang@gmail.com">pkushiqiang@gmail.com</a>
+                        </address>
+                    </div>
+                </div>
             </div>
-            <div id="title" class="col-md-9">
-                <div>
-                    <h1 class="text-left">&nbsp;&nbsp;&nbsp;Shiqiang Guo</h1>
-                    <ul id="brief">
+            <div class="panel panel-default" id="profile">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong class="" >Personal Profile</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
                         <li>6 years experience on J2EE technologies like Spring, Struts, Hibernate, Maven, Tomcat.</li>
                         <li>Doing the development of Rich Internet Application using Openlaszlo/AJAX technologies.</li>
                         <li>Reading, tracing and maintaining the source code of legacy systems.</li>
                         <li>Experience in test driven development with Agile methodology.</li>
                     </ul>
                 </div>
-                <div id="contact" class="text-right">
-                    <address>
-                        1301 Barthelow Dr. Apt. 13B
-                        <br> College Station, TX 77840
-                        <br>
-                        <abbr title="Phone">P:</abbr> (979)739-5731
-                        <br>
-                        <a href="mailto:pkushiqiang@gmail.com">pkushiqiang@gmail.com</a>
-                    </address>
+            </div>
+            <div class="panel panel-default" id="education">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong class="" >Education</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>M.S. Computer Science, Texas A&amp;M University, GPA 3.6 May 2015</li>
+                        <li>M.S. Software Engineering, Peking University, GPA 3.5 Jul 2006</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-default" id="skills">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong class="" >Languages and technologies</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li> Java, Python, Open Laszlo, JavaScript, C/C++, PHP, HTML, Pascal</li>
+                        <li> J2EE, Spring, Hibernate, Struts, Lucene, Junit, OpenNLP, MongoDB, Flask, jQuery</li>
+                        <li> MS-SQL, MySQL, MongoDB, Linux, SVN, GitHub, Tomcat, Maven</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-default" id="employment">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong class="" >Employment</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <dl>
+                        <dt> Software Engineer, &nbsp;&nbsp;&nbsp;&nbsp; Laszlo Systems &nbsp;&nbsp;&nbsp; Aug 2008 - Jul 2012 </dt>
+                        <dd>- Optimized the compiler and runtime library of the <a href="http://www.openlaszlo.org">OpenLaszlo</a> platform.</dd>
+                        <dd>- Designed software architectures and developed prototypes of projects.</dd>
+                        <dd>- Led the Laszlo China team to develop projects and communicated with the US team.</dd>
+                        <dt>Software Engineer,&nbsp;&nbsp;&nbsp;&nbsp; Rich Web Inc.&nbsp;&nbsp;&nbsp;&nbsp; Jul 2006 - Jul 2008</dt>
+                        <dd>- Participated in the whole software life cycle, such as requirement analysis, prototype design, architecture design, and implementation.
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="panel panel-default" id="projects">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong class="" >Projects</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <dl>
+                        <dt> Resume-Job Matching System </dt>
+                        <dd>A system that matches jobs to resumes to help job seekers find the most appropriate jobs, using Pyhon, NLTK, Flask and MongoDB. </dd>
+                        <dt>Pattern Recognition Based on Deep Learning Network </dt>
+                        <dd>Implemented the algorithm of Deep Learning Network to recognize the synthetic and sketch characters. </dd>
+                        <dt>Global Film and Exhibitor Info Management System for Warner Bros. </dt>
+                        <dd>The system can distribute the lm information and content, like basic information, trailers and posters to global theaters and exhibitors. I designed the architecture of the client side, and led a 12-member team to implement it in 11 months in Open Laszlo. I implemented the localization module which allowed users in dierent countries to localize the UI by themselves when using it. </dd>
+                        <dt>Online Room Painting Application for Valspar Corp. </dt>
+                        <dd>Designed the architecture of the application, and led the team in China to implement it in Open Laszlo. Cooperated with UI and UE team to find better user experience, and solved some technical challenges. </dd>
+                        <dt>Laszlo Webtop </dt>
+                        <dd>The agship product of LaszloSystems, which allows users to access their email, address books, and social networking applications from a dynamic, branded web-based environment. I led the team in China to develop, customize, and maintain the system. </dd>
+                        <dt> Xanadu REST Framework </dt>
+                        <dd>A RESTful J2EE framework for Rich Internet Application, which can reduce the server side load and improve the development speed by generating the database operation without coding. </dd>
+                        <dt> Xanadu Webtop Platform (WebOS prototype)</dt>
+                        <dd> Designed a prototype platform, which provided a desktop like environment in browsers. End users can add and remove apps in it, and developers can develop their own apps for the system. </dd>
+                        <dt> Video-sharing Website </dt>
+                        <dd> Designed the front-end and back-end of a Video-sharing website, using Spring, Hibernate, Lucene and Mysql. </dd>
+                    </dl>
                 </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong class="" >Education</strong></h3>
-                <a name="education"></a>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    <li>M.S. Computer Science, Texas A&amp;M University, GPA 3.6 May 2015</li>
-                    <li>M.S. Software Engineering, Peking University, GPA 3.5 Jul 2006</li>
+        <div class="col-md-2">
+            <nav class="bs-docs-sidebar hidden-print">
+                <ul class="nav nav-stacked bs-docs-sidenav fixed" id="sidebar">
+                    <li><a href="#Education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#employment">Employment</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#top">Back to top</a></li>
                 </ul>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong class="" >Languages and technologies</strong></h3>
-                <a name="skills"></a>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    <li> Java, Python, Open Laszlo, JavaScript, C/C++, PHP, HTML, Pascal</li>
-                    <li> J2EE, Spring, Hibernate, Struts, Lucene, Junit, OpenNLP, MongoDB, Flask, jQuery</li>
-                    <li> MS-SQL, MySQL, MongoDB, Linux, SVN, GitHub, Tomcat, Maven</li>
-                </ul>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong class="" >Employment</strong></h3>
-                <a name="employment"></a>
-            </div>
-            <div class="panel-body">
-                <dl>
-                    <dt> Software Engineer, &nbsp;&nbsp;&nbsp;&nbsp; Laszlo Systems &nbsp;&nbsp;&nbsp; Aug 2008 - Jul 2012 </dt>
-                    <dd>- Optimized the compiler and runtime library of the <a href="http://www.openlaszlo.org">OpenLaszlo</a> platform.</dd>
-                    <dd>- Designed software architectures and developed prototypes of projects.</dd>
-                    <dd>- Led the Laszlo China team to develop projects and communicated with the US team.</dd>
-                    <dt>Software Engineer,&nbsp;&nbsp;&nbsp;&nbsp; Rich Web Inc.&nbsp;&nbsp;&nbsp;&nbsp; Jul 2006 - Jul 2008</dt>
-                    <dd>- Participated in the whole software life cycle, such as requirement analysis, prototype design, architecture design, and implementation.
-                    </dd>
-                </dl>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><strong class="" >Projects</strong></h3>
-                <a name="projects"></a>
-            </div>
-            <div class="panel-body">
-                <dl>
-                    <dt> Resume-Job Matching System </dt>
-                    <dd>A system that matches jobs to resumes to help job seekers find the most appropriate jobs, using Pyhon, NLTK, Flask and MongoDB. </dd>
-                    <dt>Pattern Recognition Based on Deep Learning Network </dt>
-                    <dd>Implemented the algorithm of Deep Learning Network to recognize the synthetic and sketch characters. </dd>
-                    <dt>Global Film and Exhibitor Info Management System for Warner Bros. </dt>
-                    <dd>The system can distribute the lm information and content, like basic information, trailers and posters to global theaters and exhibitors. I designed the architecture of the client side, and led a 12-member team to implement it in 11 months in Open Laszlo. I implemented the localization module which allowed users in dierent countries to localize the UI by themselves when using it. </dd>
-                    <dt>Online Room Painting Application for Valspar Corp. </dt>
-                    <dd>Designed the architecture of the application, and led the team in China to implement it in Open Laszlo. Cooperated with UI and UE team to find better user experience, and solved some technical challenges. </dd>
-                    <dt>Laszlo Webtop </dt>
-                    <dd>The agship product of LaszloSystems, which allows users to access their email, address books, and social networking applications from a dynamic, branded web-based environment. I led the team in China to develop, customize, and maintain the system. </dd>
-                    <dt> Xanadu REST Framework </dt>
-                    <dd>A RESTful J2EE framework for Rich Internet Application, which can reduce the server side load and improve the development speed by generating the database operation without coding. </dd>
-                    <dt> Xanadu Webtop Platform (WebOS prototype)</dt>
-                    <dd> Designed a prototype platform, which provided a desktop like environment in browsers. End users can add and remove apps in it, and developers can develop their own apps for the system. </dd>
-                    <dt> Video-sharing Website </dt>
-                    <dd> Designed the front-end and back-end of a Video-sharing website, using Spring, Hibernate, Lucene and Mysql. </dd>
-                </dl>
-            </div>
         </div>
     </div>
     <div id="footer">
         <div class="container">
         </div>
     </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 
 </html>
