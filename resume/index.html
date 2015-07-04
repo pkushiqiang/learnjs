@@ -8,14 +8,13 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
     <title>Shiqiang Guo's Resume</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   
     <style type="text/css">
     .row {
         margin-right: 05px;
@@ -43,19 +42,14 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sections <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li><a href="#Education">Education</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#employment">Employment</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            
                         </ul>
                     </li>
                 </ul>
@@ -74,7 +68,7 @@
         <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Personal Profile</h3>
+                    <h3 class="panel-title"><strong class="" >Personal Profile</strong></h3>
                 </div>
                 <div class="panel-body">
                     <ul>
@@ -87,7 +81,8 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Education</h3>
+                    <h3 class="panel-title"><strong class="" >Education</strong></h3>
+                    <a name="education"></a>
                 </div>
                 <div class="panel-body">
                     <ul>
@@ -98,7 +93,8 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Languages and technologies</h3>
+                    <h3 class="panel-title"><strong class="" >Languages and technologies</strong></h3>
+                    <a name="skills"></a>
                 </div>
                 <div class="panel-body">
                     <ul>
@@ -110,53 +106,56 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Employment</h3>
+                    <h3 class="panel-title"><strong class="" >Employment</strong></h3>
+                    <a name="employment"></a>
                 </div>
                 <div class="panel-body">
-                    Software Engineer Laszlo Systems Aug 2008 - Jul 2012
- Optimized the compiler and runtime library of the OpenLaszlo platform.
- Designed software architectures and developed prototypes of projects.
- Led the Laszlo China team to develop projects and communicated with the US team.
-Software Engineer Rich Web Inc. Jul 2006 - Jul 2008
- Participated in the whole software life cycle, such as requirement analysis, prototype design, architecture design, and
-implementation.
+                    <dl>
+                        <dt> Software Engineer, &nbsp;&nbsp;&nbsp;&nbsp; Laszlo Systems &nbsp;&nbsp;&nbsp; Aug 2008 - Jul 2012 </dt>
+                        <dd>- Optimized the compiler and runtime library of the OpenLaszlo platform.</dd>
+                        <dd>- Designed software architectures and developed prototypes of projects.</dd>
+                        <dd>- Led the Laszlo China team to develop projects and communicated with the US team.</dd>
+                        <dt>Software Engineer,&nbsp;&nbsp;&nbsp;&nbsp; Rich Web Inc.&nbsp;&nbsp;&nbsp;&nbsp; Jul 2006 - Jul 2008</dt>
+                        <dd>- Participated in the whole software life cycle, such as requirement analysis, prototype design, architecture design, and implementation.
+                        </dd>
+                    </dl>
                 </div>
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Projects</h3>
+                    <h3 class="panel-title"><strong class="" >Projects</strong></h3>
+                    <a name="projects"></a>
                 </div>
                 <div class="panel-body">
-                     Resume-Job Matching System
-A system that matches jobs to resumes to help job seekers nd the most appropriate jobs, using Pyhon, NLTK, Flask
-and MongoDB.
- Pattern Recognition Based on Deep Learning Network
-Implemented the algorithm of Deep Learning Network to recognize the synthetic and sketch characters.
- Global Film and Exhibitor Info Management System for Warner Bros.
-The system can distribute the lm information and content, like basic information, trailers and posters to global theaters
-and exhibitors. I designed the architecture of the client side, and led a 12-member team to implement it in 11 months
-in Open Laszlo. I implemented the localization module which allowed users in dierent countries to localize the UI by
-themselves when using it.
- Online Room Painting Application for Valspar Corp.
-Designed the architecture of the application, and led the team in China to implement it in Open Laszlo. Cooperated
-with UI and UE team to nd better user experience, and solved some technical challenges.
- Laszlo Webtop
-The 
-agship product of LaszloSystems, which allows users to access their email, address books, and social networking
-applications from a dynamic, branded web-based environment. I led the team in China to develop, customize, and
-maintain the system.
- Xanadu REST Framework
-A RESTful J2EE framework for Rich Internet Application, which can reduce the server side load and improve the
-development speed by generating the database operation without coding.
- Xanadu Webtop Platform (WebOS prototype)
-Designed a prototype platform, which provided a desktop like environment in browsers. End users can add and remove
-apps in it, and developers can develop their own apps for the system.
- Video-sharing Website
-Designed the front-end and back-end of a Video-sharing website, using Spring, Hibernate, Lucene and Mysql.
+                    <dl>
+                        <dt> Resume-Job Matching System </dt>
+                        <dd>A system that matches jobs to resumes to help job seekers find the most appropriate jobs, using Pyhon, NLTK, Flask and MongoDB. </dd>
+                        <dt>Pattern Recognition Based on Deep Learning Network </dt>
+                        <dd>Implemented the algorithm of Deep Learning Network to recognize the synthetic and sketch characters. </dd>
+                        <dt>Global Film and Exhibitor Info Management System for Warner Bros. </dt>
+                        <dd>The system can distribute the lm information and content, like basic information, trailers and posters to global theaters and exhibitors. I designed the architecture of the client side, and led a 12-member team to implement it in 11 months in Open Laszlo. I implemented the localization module which allowed users in dierent countries to localize the UI by themselves when using it. </dd>
+                        <dt>Online Room Painting Application for Valspar Corp. </dt>
+                        <dd>Designed the architecture of the application, and led the team in China to implement it in Open Laszlo. Cooperated with UI and UE team to find better user experience, and solved some technical challenges. </dd>
+                        <dt>Laszlo Webtop </dt>
+                        <dd>The agship product of LaszloSystems, which allows users to access their email, address books, and social networking applications from a dynamic, branded web-based environment. I led the team in China to develop, customize, and maintain the system. </dd>
+                        <dt> Xanadu REST Framework </dt>
+                        <dd>A RESTful J2EE framework for Rich Internet Application, which can reduce the server side load and improve the development speed by generating the database operation without coding. </dd>
+                        <dt> Xanadu Webtop Platform (WebOS prototype)</dt>
+                        <dd> Designed a prototype platform, which provided a desktop like environment in browsers. End users can add and remove apps in it, and developers can develop their own apps for the system. </dd>
+                        <dt> Video-sharing Website </dt>
+                        <dd> Designed the front-end and back-end of a Video-sharing website, using Spring, Hibernate, Lucene and Mysql. </dd>
+                    </dl>
                 </div>
             </div>
         </div>
     </div>
+
+     <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 
 </html>
