@@ -46,6 +46,26 @@
         padding-top: 25px;
         font-size: 1.3em;
     }
+    /* Set the fixed height of the footer here */
+    
+    #push,
+    #footer {
+        height: 60px;
+    }
+    
+    #footer {
+        background-color: #f5f5f5;
+    }
+    /* Lastly, apply responsive CSS fixes as necessary */
+    
+    @media (max-width: 767px) {
+        #footer {
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
     </style>
 </head>
 
@@ -139,7 +159,7 @@
             <div class="panel-body">
                 <dl>
                     <dt> Software Engineer, &nbsp;&nbsp;&nbsp;&nbsp; Laszlo Systems &nbsp;&nbsp;&nbsp; Aug 2008 - Jul 2012 </dt>
-                    <dd>- Optimized the compiler and runtime library of the <a href="http://www.openlaszlo.org" >OpenLaszlo</a> platform.</dd>
+                    <dd>- Optimized the compiler and runtime library of the <a href="http://www.openlaszlo.org">OpenLaszlo</a> platform.</dd>
                     <dd>- Designed software architectures and developed prototypes of projects.</dd>
                     <dd>- Led the Laszlo China team to develop projects and communicated with the US team.</dd>
                     <dt>Software Engineer,&nbsp;&nbsp;&nbsp;&nbsp; Rich Web Inc.&nbsp;&nbsp;&nbsp;&nbsp; Jul 2006 - Jul 2008</dt>
@@ -175,6 +195,10 @@
             </div>
         </div>
     </div>
+    <div id="footer">
+        <div class="container">
+           
+        </div>
     </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
