@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	
+	
+<body>
+<script src="carmodels.js"></script>	
+<script>	
+		                      
+    var makeName, modelName, modelKey, styleName;
+    
+    function setStyles() {
+		modelName = document.getElementById("model-option").value;
+		modelKey = makeName +"-" + modelName;
+	//	alert(modelName);
+		var styleOptionNode = document.getElementById("style-option");
+        styleOptionNode.innerHTML = '<option></option>';
+        var styles = styleMap[modelKey];
+        for ( var styleName in styles ) {
+			var optionItem = document.createElement('option');
+			optionItem.setAttribute('value', styles[styleName]);
+			optionItem.setAttribute('label', styleName);
+			styleOptionNode.appendChild(optionItem); 			
+        }
+	}			                      
+				   
+    function setModels() {
+		makeName = document.getElementById("make-option").value;
+		
+	//	alert(makeName);
+		var modelOptionNode = document.getElementById("model-option");
+        modelOptionNode.innerHTML = '<option></option>';
+        var models = modelMap[makeName];
+        for ( var modelName in models ) {
+			var optionItem = document.createElement('option');
+			optionItem.setAttribute('value', models[modelName]);
+			optionItem.setAttribute('label', modelName);
+			modelOptionNode.appendChild(optionItem); 			
+        }
+	}				   
+	  
+	function toKbb() {
+		styleName = document.getElementById("style-option").value;	
+		var baseUrl = "http://www.kbb.com/";
+		var yearValue = document.getElementById("year-input").value;		
+		var kbbForm = document.getElementById("kbb-form"); 
+		baseUrl = baseUrl + makeName + '/' + modelName + '/' ;
+		kbbForm.action = baseUrl +  yearValue + '-' + makeName + '-' + modelName +'/' +  styleName;	
+		
+		var linkdiv = document.getElementById("showlink");
+		linkdiv.innerHTML = kbbForm.action;
+			
+		kbbForm.submit();
+	}
+	
+	function toEdmunds() {
+		styleName = document.getElementById("style-option").value;	
+		var baseUrl = "http://www.edmunds.com/";
+		var yearValue = document.getElementById("year-input").value;		
+		var kbbForm = document.getElementById("kbb-form"); 
+		baseUrl = baseUrl + makeName + '/' + modelName + '/' ;
+		baseUrl = baseUrl +  yearValue + '/' +  'reliability.html' ;	
+		
+		var linkdiv = document.getElementById("showlink");
+		linkdiv.innerHTML = kbbForm.action;
+			
+       window.open(baseUrl);
+	}
+	
+	
+</script>
+
+<b> see value on KBB </b>
+<br><br>
+
+<form action=""  id="kbb-form" target="_blank"  method="get" accept-charset="utf-8">
+  
+   <select  id="make-option" onchange="setModels();"  >
+	 <option></option>
+	<option name=make value="nissan"> NISSIAN  </option>
+	<option name=make value="toyota"> Toyota  </option>
+	<option name=make value="honda"> Honda </option>
+	<option name=make value="jeep">  Jeep  </option>
+	<option name=query value="ford">  Ford </option>
+  </select>
+  
+  <select   id="model-option" onchange="setStyles();" >
+	
+  </select>
+  
+   <select  id="style-option"   >
+	
+  </select>
+  
+  <br>
+  Year: <input type="text" name="year" id="year-input" value="2005" ><br>
+  Mileage: <input type="text" name="mileage" value="90000" ><br>
+  
+  <input type="hidden" name="intent" value="trade-in-sell" >
+  <input type="hidden" name="pricetype" value="private-party" >
+  
+  <input type="button" value="ToKBB" onclick="toKbb();" >
+  <input type="button" value="ToEdmunds" onclick="toEdmunds();" >
+</form>
+
+<hr width="80%" align="left">
+
+
+<div id="showlink"> </div>
+
+
+</body>
+</html>
