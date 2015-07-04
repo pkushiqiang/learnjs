@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-   
     <style type="text/css">
     .row {
         margin-right: 05px;
@@ -23,13 +22,36 @@
     
     .panel {
         margin-bottom: 0px;
+        border-radius: 0px;
+    }
+    
+    #imgdiv {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+    #contact {
+        bottom: 0px;
+        position: absolute;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 100px;
+    }
+    
+    #title {
+        height: 330px;
+    }
+    
+    #brief {
+        padding-top: 25px;
+        font-size: 1.3em;
     }
     </style>
 </head>
 
 <body role="document">
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -49,7 +71,6 @@
                             <li><a href="#skills">Skills</a></li>
                             <li><a href="#employment">Employment</a></li>
                             <li><a href="#projects">Projects</a></li>
-                            
                         </ul>
                     </li>
                 </ul>
@@ -59,102 +80,107 @@
     </nav>
     <div class="container theme-showcase" role="main">
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
-            <h1 class="text-left">Shiqiang Guo</h1>
-            <h3 class="text-right"> 1301 Barthelow Dr. Apt. 13B, College Station, TX 77840, (979)739-5731
-        pkushiqiang@gmail.com 
-      </h3>
-        </div>
         <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong class="" >Personal Profile</strong></h3>
-                </div>
-                <div class="panel-body">
-                    <ul>
+            <div class="col-md-3" id="imgdiv">
+                <img src="profile.jpg" class="img-thumbnail" alt="" width="280" height="180">
+            </div>
+            <div id="title" class="col-md-9">
+                <div>
+                    <h1 class="text-left">&nbsp;&nbsp;&nbsp;Shiqiang Guo</h1>
+                    <ul id="brief">
                         <li>6 years experience on J2EE technologies like Spring, Struts, Hibernate, Maven, Tomcat.</li>
                         <li>Doing the development of Rich Internet Application using Openlaszlo/AJAX technologies.</li>
                         <li>Reading, tracing and maintaining the source code of legacy systems.</li>
                         <li>Experience in test driven development with Agile methodology.</li>
                     </ul>
                 </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong class="" >Education</strong></h3>
-                    <a name="education"></a>
-                </div>
-                <div class="panel-body">
-                    <ul>
-                        <li>M.S. Computer Science, Texas A&amp;M University, GPA 3.6 May 2015</li>
-                        <li>M.S. Software Engineering, Peking University, GPA 3.5 Jul 2006</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong class="" >Languages and technologies</strong></h3>
-                    <a name="skills"></a>
-                </div>
-                <div class="panel-body">
-                    <ul>
-                        <li> Java, Python, Open Laszlo, JavaScript, C/C++, PHP, HTML, Pascal</li>
-                        <li> J2EE, Spring, Hibernate, Struts, Lucene, Junit, OpenNLP, MongoDB, Flask, jQuery</li>
-                        <li> MS-SQL, MySQL, MongoDB, Linux, SVN, GitHub, Tomcat, Maven</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong class="" >Employment</strong></h3>
-                    <a name="employment"></a>
-                </div>
-                <div class="panel-body">
-                    <dl>
-                        <dt> Software Engineer, &nbsp;&nbsp;&nbsp;&nbsp; Laszlo Systems &nbsp;&nbsp;&nbsp; Aug 2008 - Jul 2012 </dt>
-                        <dd>- Optimized the compiler and runtime library of the OpenLaszlo platform.</dd>
-                        <dd>- Designed software architectures and developed prototypes of projects.</dd>
-                        <dd>- Led the Laszlo China team to develop projects and communicated with the US team.</dd>
-                        <dt>Software Engineer,&nbsp;&nbsp;&nbsp;&nbsp; Rich Web Inc.&nbsp;&nbsp;&nbsp;&nbsp; Jul 2006 - Jul 2008</dt>
-                        <dd>- Participated in the whole software life cycle, such as requirement analysis, prototype design, architecture design, and implementation.
-                        </dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><strong class="" >Projects</strong></h3>
-                    <a name="projects"></a>
-                </div>
-                <div class="panel-body">
-                    <dl>
-                        <dt> Resume-Job Matching System </dt>
-                        <dd>A system that matches jobs to resumes to help job seekers find the most appropriate jobs, using Pyhon, NLTK, Flask and MongoDB. </dd>
-                        <dt>Pattern Recognition Based on Deep Learning Network </dt>
-                        <dd>Implemented the algorithm of Deep Learning Network to recognize the synthetic and sketch characters. </dd>
-                        <dt>Global Film and Exhibitor Info Management System for Warner Bros. </dt>
-                        <dd>The system can distribute the lm information and content, like basic information, trailers and posters to global theaters and exhibitors. I designed the architecture of the client side, and led a 12-member team to implement it in 11 months in Open Laszlo. I implemented the localization module which allowed users in dierent countries to localize the UI by themselves when using it. </dd>
-                        <dt>Online Room Painting Application for Valspar Corp. </dt>
-                        <dd>Designed the architecture of the application, and led the team in China to implement it in Open Laszlo. Cooperated with UI and UE team to find better user experience, and solved some technical challenges. </dd>
-                        <dt>Laszlo Webtop </dt>
-                        <dd>The agship product of LaszloSystems, which allows users to access their email, address books, and social networking applications from a dynamic, branded web-based environment. I led the team in China to develop, customize, and maintain the system. </dd>
-                        <dt> Xanadu REST Framework </dt>
-                        <dd>A RESTful J2EE framework for Rich Internet Application, which can reduce the server side load and improve the development speed by generating the database operation without coding. </dd>
-                        <dt> Xanadu Webtop Platform (WebOS prototype)</dt>
-                        <dd> Designed a prototype platform, which provided a desktop like environment in browsers. End users can add and remove apps in it, and developers can develop their own apps for the system. </dd>
-                        <dt> Video-sharing Website </dt>
-                        <dd> Designed the front-end and back-end of a Video-sharing website, using Spring, Hibernate, Lucene and Mysql. </dd>
-                    </dl>
+                <div id="contact" class="text-right">
+                    <address>
+                        1301 Barthelow Dr. Apt. 13B
+                        <br> College Station, TX 77840
+                        <br>
+                        <abbr title="Phone">P:</abbr> (979)739-5731
+                        <br>
+                        <a href="mailto:pkushiqiang@gmail.com">pkushiqiang@gmail.com</a>
+                    </address>
                 </div>
             </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong class="" >Education</strong></h3>
+                <a name="education"></a>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>M.S. Computer Science, Texas A&amp;M University, GPA 3.6 May 2015</li>
+                    <li>M.S. Software Engineering, Peking University, GPA 3.5 Jul 2006</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong class="" >Languages and technologies</strong></h3>
+                <a name="skills"></a>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li> Java, Python, Open Laszlo, JavaScript, C/C++, PHP, HTML, Pascal</li>
+                    <li> J2EE, Spring, Hibernate, Struts, Lucene, Junit, OpenNLP, MongoDB, Flask, jQuery</li>
+                    <li> MS-SQL, MySQL, MongoDB, Linux, SVN, GitHub, Tomcat, Maven</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong class="" >Employment</strong></h3>
+                <a name="employment"></a>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt> Software Engineer, &nbsp;&nbsp;&nbsp;&nbsp; Laszlo Systems &nbsp;&nbsp;&nbsp; Aug 2008 - Jul 2012 </dt>
+                    <dd>- Optimized the compiler and runtime library of the <a href="http://www.openlaszlo.org" >OpenLaszlo</a> platform.</dd>
+                    <dd>- Designed software architectures and developed prototypes of projects.</dd>
+                    <dd>- Led the Laszlo China team to develop projects and communicated with the US team.</dd>
+                    <dt>Software Engineer,&nbsp;&nbsp;&nbsp;&nbsp; Rich Web Inc.&nbsp;&nbsp;&nbsp;&nbsp; Jul 2006 - Jul 2008</dt>
+                    <dd>- Participated in the whole software life cycle, such as requirement analysis, prototype design, architecture design, and implementation.
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong class="" >Projects</strong></h3>
+                <a name="projects"></a>
+            </div>
+            <div class="panel-body">
+                <dl>
+                    <dt> Resume-Job Matching System </dt>
+                    <dd>A system that matches jobs to resumes to help job seekers find the most appropriate jobs, using Pyhon, NLTK, Flask and MongoDB. </dd>
+                    <dt>Pattern Recognition Based on Deep Learning Network </dt>
+                    <dd>Implemented the algorithm of Deep Learning Network to recognize the synthetic and sketch characters. </dd>
+                    <dt>Global Film and Exhibitor Info Management System for Warner Bros. </dt>
+                    <dd>The system can distribute the lm information and content, like basic information, trailers and posters to global theaters and exhibitors. I designed the architecture of the client side, and led a 12-member team to implement it in 11 months in Open Laszlo. I implemented the localization module which allowed users in dierent countries to localize the UI by themselves when using it. </dd>
+                    <dt>Online Room Painting Application for Valspar Corp. </dt>
+                    <dd>Designed the architecture of the application, and led the team in China to implement it in Open Laszlo. Cooperated with UI and UE team to find better user experience, and solved some technical challenges. </dd>
+                    <dt>Laszlo Webtop </dt>
+                    <dd>The agship product of LaszloSystems, which allows users to access their email, address books, and social networking applications from a dynamic, branded web-based environment. I led the team in China to develop, customize, and maintain the system. </dd>
+                    <dt> Xanadu REST Framework </dt>
+                    <dd>A RESTful J2EE framework for Rich Internet Application, which can reduce the server side load and improve the development speed by generating the database operation without coding. </dd>
+                    <dt> Xanadu Webtop Platform (WebOS prototype)</dt>
+                    <dd> Designed a prototype platform, which provided a desktop like environment in browsers. End users can add and remove apps in it, and developers can develop their own apps for the system. </dd>
+                    <dt> Video-sharing Website </dt>
+                    <dd> Designed the front-end and back-end of a Video-sharing website, using Spring, Hibernate, Lucene and Mysql. </dd>
+                </dl>
+            </div>
+        </div>
     </div>
-
-     <!-- Bootstrap core JavaScript
+    </div>
+    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-     <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 
