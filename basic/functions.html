@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+
+    <script>
+    //   "use strict";
+
+    (function (arg) {
+        console.log("a function run");
+    }());
+
+    (function() {
+        console.log("call  function run, this=",this);
+    }.call(this));
+
+    function fun1() {
+        console.log(" fun1 runing, this=",this);
+    }
+    fun1();
+    fun1.call(null);
+        
+    </script>
+</head>
+
+<body>
+   
+    
+</body>
+
+</html>

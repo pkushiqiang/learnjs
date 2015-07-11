@@ -2,32 +2,106 @@
 <html>
 
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
 </head>
 
 <body>
-  <p>This example calls a function which performs a calculation, and returns the result:</p>
-  <p id="demo"></p>
-  <script>
-  "use strict";
+    <p>This example calls a function which performs a calculation, and returns the result:</p>
+    <p id="demo"></p>
+    <script>
+    //   "use strict";
 
-  function sayHello(greeting) {
-    var prefix = greeting;
-    var n=1;
-    return function(name) {
-      console.log(prefix + "  " + name );
+    function sayHello(greeting) {
+        var prefix = greeting;
+        var n = 1;
+        return function(name) {
+            console.log(prefix + "  " + name);
+        }
     }
-  }
 
-  var engHello = sayHello("Hello");
-  engHello("frank ");
+    var engHello = sayHello("Hello");
+    engHello("frank ");
 
-  var zhHello = sayHello("你好");
-  zhHello("frank ");
-  engHello("lisa ");
+    var zhHello = sayHello("你好");
+    zhHello("frank ");
+    engHello("lisa ");
 
-  </script>
+    //-------------------------
+    var adder = function(x) {
+        var base = x;
+        return function(n) {
+            return n + base;
+        };
+    };
+
+    var add10 = adder(10);
+    console.log(add10(5));
+
+    var add20 = adder(20);
+    console.log(add20(5));
+
+    //-------------------------
+    for (var i = 0; i < 5; i++) {
+        setTimeout(function() {
+            console.log(i);
+        }, 5);
+    }
+
+    for (var i = 0; i < 5; i++) {
+        (function(idx) {
+            setTimeout(function() {
+                console.log(idx);
+            }, 5);
+        })(i);
+    }
+
+    //--------------------------------
+
+
+    function setupSomeGlobals() {
+        // Local variable that ends up within closure
+        var num = 666;
+        // Store some references to functions as global variables
+        gAlertNumber = function() {
+            console.log("gAlertNumber num=" + num);
+        }
+        gIncreaseNumber = function() {
+            num++;
+        }
+        gSetNumber = function(x) {
+            num = x;
+        }
+    }
+    setupSomeGlobals(); // 为三个全局变量赋值
+    gAlertNumber(); //666
+    gIncreaseNumber();
+    gAlertNumber(); // 667
+    gSetNumber(12); //
+    gAlertNumber(); //12
+
+
+    //------------------
+
+    function buildList(list) {
+        var result = [];
+        for (var i = 0; i < list.length; i++) {
+            var item = 'item' + list[i];
+            result.push(function() {
+                console.log("show list item: "+item + ' ' + list[i])
+            });
+        }
+        return result;
+    }
+
+    (function testList() {
+        var fnlist = buildList([1, 2, 3]);
+        // using j only to help prevent confusion - could use i
+        for (var j = 0; j < fnlist.length; j++) {
+            fnlist[j]();
+        }
+    })();
+    </script>
 </body>
 
 </html>
