@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+
+    <script>
+    //   "use strict";
+
+    var myRe = /\b(dog)\b/g;
+  //  myRe=/dog/;
+    str = 'dog';
+    restr = '\\b'+str+'\\b';
+    console.log( "restr= " + restr);
+    myRe = new RegExp(restr,'ig');
+    var sent = "Dog this is a dog and doG or adog dogc dog.";
+    var res = myRe.exec(sent);
+    while (res) {
+        console.log(res);
+        console.log(res.index);
+        res = myRe.exec(sent);        
+    }   
+    
+    </script>
+</head>
+
+<body>
+   
+    
+</body>
+
+</html>
