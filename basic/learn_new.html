@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <p>This example calls a function which performs a calculation, and returns the result:</p>
+    <p id="demo"></p>
+    <script>
+    //   "use strict";
+
+    var fun = function(m) {
+        this.m = m;
+        console.log(m);
+        console.log(this);
+    }
+
+    fun("directly");
+    console.log("------------------------");
+    var obj = new fun("obj");
+    console.log("obj === fun  ", obj === fun);
+   // console.log(obj.prototype === fun);
+    console.log("fun.prototype =", fun.prototype);
+    console.log("obj == ",obj);
+    console.log("obj.prototype = ",obj.prototype);
+    console.log("obj.__proto__  = ", obj.__proto__);
+    console.log("obj.__proto__  === fun.prototype   ", obj.__proto__  === fun.prototype );
+    </script>
+</body>
+
+</html>
